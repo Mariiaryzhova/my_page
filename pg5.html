@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Моя страница
+  </title>
+  <style>
+    html {
+      background-color: antiquewhite;
+      font-family: Garamond;
+      font-size: larger;
+    }
+
+    .menu-main {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      margin-top: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black
+    }
+
+    .l {
+      display: inline;
+      margin-left: 110px;
+    }
+
+    .topmenu ul li.active a,
+    .topmenu ul li a:hover {
+      text-decoration: none;
+      color: blue;
+    }
+
+    .active {
+      text-decoration: overline;
+    }
+
+    .u {
+      margin-top: 30px;
+    }
+
+    .u1 {
+      margin-left: -120px;
+      margin-top: 370px;
+    }
+
+    h1 {
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topmenu">
+    <ul class="menu-main">
+      <li class="l"><a href="main.html">Главная</a></li>
+      <li class="l"><a href="pg2.html">О нас</a></li>
+      <li class="l"><a href="pg3.html">Студии</a></li>
+      <li class="l"><a href="pg4.html">Тарифы</a></li>
+      <li class="l"><a href="pg1.html">Клубная карта</a></li>
+      <li class="l"><a href="pg5.html" class="active">Моя страница</a></li>
+    </ul>
+  </div>
+
+  <h1>Задания</h1>
+  <div class="topmenu">
+    <ul type="1" class="u">
+      <li><a href="https://mariiaryzhova.github.io/Passport/" target="_blank">Паспорт</a></li>
+      <li><a href="https://mariiaryzhova.github.io/Passport_screenshot/" target="_blank">Паспорт скрин</a></li>
+      <li><a href="https://mariiaryzhova.github.io/Algorithm0/" target="_blank">Алгоритмическая задача 1</a></li>
+    </ul>
+  </div>
+  <div class="topmenu">
+    <ul type="disc" class="u1">
+      <li class="l">
+        <a href="#">Наверх </a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  $(function () {
+
+    var url = window.location.href;
+
+
+    $(".topmenu a").each(function () {
+
+      if (url == (this.href)) {
+        $(this).closest("li").addClass("active");
+
+        $(this).closest("li").parent().parent().addClass("active");
+      }
+    });
+
+  });
+  $("ul li a").on('click', function (e) {
+    e.preventDefault();
+    $(this).closest('li').addClass('active').siblings().removeClass('active')
+  });  
+</script>
+
+</html>
